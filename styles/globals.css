@@ -1,4 +1,4 @@
-@import "./normalize.css";
+@import './normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
 
 :root {
@@ -132,8 +132,10 @@ body {
   background-color: #a2bda2;
   /* background: var(--color-surface-elevated); */
   color: var(--color-text);
-  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  cursor: none;
 }
 
 html,
