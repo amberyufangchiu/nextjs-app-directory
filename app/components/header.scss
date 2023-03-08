@@ -1,16 +1,18 @@
 .header {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
-
+  height: 80%;
   color: #6a8366;
+  margin-left: 3vw;
+
   h1 {
-    font-size: 3rem;
+    font-size: 4vw;
   }
 
   h2 {
-    font-size: 1.6rem;
+    font-size: 2vw;
   }
 }
