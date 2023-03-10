@@ -1,13 +1,15 @@
 import '../styles/globals.css'
-import style from '../styles/index.module.scss'
-import Nav from '@/app/components/Nav'
+import '../styles/index.scss'
+import Menu from '@/app/components/Menu'
 import Header from '@/app/components/Header'
+import PrelodingPage from '@/app/components/Preloading'
 import Cursor from '@/app/components/cursor/CustomCursor'
 import CursorManager from '@/app/components/cursor/CursorManager'
 import { useState, useRef, useEffect } from 'react'
 
 export default function Home() {
   const [preloading, setPreloading] = useState<boolean>(true)
+  const [menuToggle, setMenuToggle] = useState<boolean>(false)
   const intervalRef: { current: NodeJS.Timeout | null } = useRef(null)
   const clear = () => {
     clearInterval(intervalRef.current as NodeJS.Timeout)
@@ -26,15 +28,23 @@ export default function Home() {
     }
   }, [preloading])
 
+  const classes = menuToggle ? 'menu-button active' : 'menu-button'
+
   return (
     <CursorManager>
       {preloading ? (
-        <div>hello</div>
+        <PrelodingPage />
       ) : (
-        <div className={style.main}>
+        <div className='main'>
           <>
+            <button
+              className={classes}
+              onClick={() => setMenuToggle(!menuToggle)}
+            >
+              <span className='bar'></span>
+            </button>
             <Cursor />
-            <Nav />
+            <Menu menuToggle={menuToggle} setMenuToggle={setMenuToggle} />
             <Header />
           </>
         </div>
