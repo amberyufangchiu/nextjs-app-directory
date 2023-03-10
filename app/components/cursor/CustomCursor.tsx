@@ -6,8 +6,6 @@ const CustomCursor: React.FC = () => {
   const secondaryCursor = useRef<HTMLDivElement>(null)
   const { size } = useContext<CursorContentType>(CursorContext)
 
-  console.log(size)
-
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       const { clientX, clientY } = event
