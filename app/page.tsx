@@ -1,21 +1,15 @@
-import type { ReactElement } from 'react'
-import Layout from './layout'
-import NestedLayout from './components/Layout'
-import type { NextPageWithLayout } from './_app'
+import React from 'react'
+import './home.scss'
 
-const Page: NextPageWithLayout = () => {
-  return <p>hello world</p>
-}
-
-Page.getLayout = function getLayout(page: ReactElement) {
+const Home = () => {
   return (
-    <Layout>
-      <NestedLayout>
-        {/* // nested layout(?) should render custom layout */}
-        {page}
-      </NestedLayout>
-    </Layout>
+    <div className='home'>
+      <h2>Hello, nihao!</h2>
+      <h1>I am Yu Fang Chiu</h1>
+      <h1>But you can call me Amber</h1>
+      <h2>I am a software engineer</h2>
+    </div>
   )
 }
 
-export default Page
+export default Home
