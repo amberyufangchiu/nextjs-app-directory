@@ -30,8 +30,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "index.d.ts",
-    "pages/Layout.bak",
-    "pages/index.bak"
   ],
   "exclude": ["node_modules"]
 }
