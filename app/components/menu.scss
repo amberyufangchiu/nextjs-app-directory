@@ -1,16 +1,20 @@
 .menu {
-  display: none;
-}
-
-.menu.active {
   display: block;
+  overflow: hidden;
   background-color: #e2c4b3;
   position: absolute;
   height: 100vh;
   width: 100vw;
   z-index: 2;
+  right: 0;
+  top: 0;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  -webkit-transform: translateX(105%);
+          transform: translateX(105%);
 
-  h1 {
+
+  h1{
     position: relative;
     font-size: 2rem;
     top: 7rem;
@@ -28,4 +32,9 @@
       }
     }
   }
+}
+
+.menu.active{
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%); 
 }
