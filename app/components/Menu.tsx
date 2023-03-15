@@ -11,6 +11,10 @@ const Menu = (props: HeaderProps): JSX.Element => {
   const { menuToggle, setMenuToggle } = props
   const classes = menuToggle ? 'menu active' : 'menu'
 
+  const handleClicked = () => {
+    setMenuToggle(false)
+  }
+
   return (
     <div className={classes}>
       <h1>
@@ -18,9 +22,9 @@ const Menu = (props: HeaderProps): JSX.Element => {
       </h1>
       <ul>
         <li>
-          <div onClick={() => setMenuToggle(false)}>
+          <Link href='/' onClick={() => handleClicked()}>
             <span>01</span> Home
-          </div>
+          </Link>
         </li>
         <li>
           <Link href='/'>
@@ -28,7 +32,7 @@ const Menu = (props: HeaderProps): JSX.Element => {
           </Link>
         </li>
         <li>
-          <Link href='/about'>
+          <Link href='/about' onClick={() => handleClicked()}>
             <span>03</span> About
           </Link>
         </li>
