@@ -15,32 +15,28 @@ const Menu = (props: HeaderProps): JSX.Element => {
     setMenuToggle(false)
   }
 
+  const menu = [
+    {id:'01',page:'Home', href: '/'},
+    {id:'02',page:'Work', href: '/work'},
+    {id:'03',page:'About', href: '/about'},
+    {id:'04',page:'Contact', href: '/contact'}
+  ]
+
   return (
     <div className={classes}>
       <h1>
         {'\u003c'} AmberDev {'\u002f\u003e'}
       </h1>
       <ul>
-        <li>
-          <Link href='/' onClick={() => handleClicked()}>
-            <span>01</span> Home
-          </Link>
-        </li>
-        <li>
-          <Link href='/'>
-            <span>02</span> Work
-          </Link>
-        </li>
-        <li>
-          <Link href='/about' onClick={() => handleClicked()}>
-            <span>03</span> About
-          </Link>
-        </li>
-        <li>
-          <Link href='/contact'>
-            <span>04</span> Contact
-          </Link>
-        </li>
+        {menu.map((item)=>{
+          return(
+            <li key={item.id}>
+              <Link href={item.href} onClick={() => handleClicked()}>
+                <span>{item.id}</span> {item.page}
+              </Link>
+            </li>
+          )
+        })}
       </ul>
     </div>
   )
