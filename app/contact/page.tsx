@@ -1,9 +1,9 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './index.scss'
+import { sendContactForm } from '../lib/api'
 
 const Contact = () => {
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,36 +23,21 @@ const Contact = () => {
     }));
   }
 
-  const submitForm = (e: any) => {
-    // We don't want the page to refresh
+  const submitForm = async(e: any) => {
     e.preventDefault()
-
-    const formURL = e.target.action
+    
     const data = new FormData()
-
+    
     // Turn our formData state into data we can use with a form submission
     Object.entries(formData).forEach(([key, value]) => {
       data.append(key, value);
     })
-
-    // POST the data to the URL of the form
-    fetch(formURL, {
-      method: "POST",
-      body: data,
-      headers: {
-        'accept': 'application/json',
-      },
-    }).then((response) => response.json())
-    .then((data) => {
-      setFormData({ 
-        name: "", 
-        email: "", 
-        message: "" 
-      })
-
-      setFormSuccess(true)
-      setFormSuccessMessage(data.submission_text)
-    })
+    
+    try {
+      await sendContactForm(data);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -73,8 +58,8 @@ const Contact = () => {
           <div>
             <label>Message</label>
             <textarea name="message" onChange={handleInput} value={formData.message}></textarea>
-          </div>
 
+          </div>
           <button type="submit">Send message</button>
         </form>
     </div>
