@@ -8,4 +8,34 @@
   align-items: flex-start;
   left: 25vw;
   position: absolute;
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .divider {
+    width: 50vw;
+    border-bottom: 3px solid #6c8d76;
+  }
+
+  .inner {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .mail {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+      p {
+        font-size: 1.4rem;
+      }
+    }
+    .social-media {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
 }
