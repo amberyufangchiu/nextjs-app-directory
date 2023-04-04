@@ -1,20 +1,40 @@
 .home {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 80%;
+color: #6a8366;
+position: absolute;
+top: 5vw;
+gap: .3rem;
+
+.title {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  width: 100%;
-  height: 80%;
-  color: #6a8366;
-  position: absolute;
-  left: 13vw;
-  top: 5vw;
 
   h1 {
-    font-size: 4vw;
+    font-size: 2.4vw;
   }
 
   h2 {
-    font-size: 2vw;
+    font-size: 1.4vw;
   }
+
+  .tech-stack{
+    margin-top: 4rem;
+    p{
+      font-size: 1rem;
+    }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .4rem;
+  }
+}
+
+
 }
